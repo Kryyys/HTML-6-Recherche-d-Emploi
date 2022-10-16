@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche d'emploi</title>
+
+    <style>
+        .titre {
+            font-weight: 600;
+        }
+
+        legend {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        input:required:invalid {
+            border: 2px solid red;
+        }
+
+        input:required:valid {
+            border : 2px solid green;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Recherche d'Emploi</h1>
+
+    <form action="">
+        <fieldset>
+            <legend>Informations Personnelles</legend>
+
+            <p><i>Les champs avec une astérique * sont obligatoires</i></p>
+
+            <!--Nom, Prénom, Email-->
+            <label for="Nom" class="titre">Nom* :</label><br>
+            <input type="text" name="nom" minlength="2" maxlength="30" required ><br><br>
+
+            <label for="Prénom" class="titre">Prénom* :</label><br>
+            <input type="text" name="prénom" minlength="2" maxlength="30" required><br><br>
+
+            <label for="Email" class="titre">Email* :</label><br>
+            <input type="email" name="email" pattern="^([a-z0-9]+)@([a-z]+)(\.com|\.net|\.fr|\.org)$" required><br><br>
+
+            <!--Sexe-->
+            <label for="Sexe" class="titre">Sexe :</label><br>
+            <input type="radio" name="sexe" value="Femme" checked><label for="Femme">Femme</label>
+            <input type="radio" name="sexe" value="Homme"><label for="Homme">Homme</label><br><br>
+
+            <!--Photo-->
+            <label for="photo" class="titre">Photo de Profil :</label><br>
+            <input type="file" name="photo" accept=".png, .jpg"><br>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Informations Complémentaires</legend><br>
+
+            <!--Pays-->
+            <label for="Pays" class="titre">Pays de Résidence :</label><br>
+            <select name="pays">
+                <option value="France">France</option>
+                <option value="Espagne">Espagne</option>
+                <option value="Italie">Italie</option>
+                <option value="Angleterre">Angleterre</option>
+                <option value="Belgique">Belgique</option>
+            </select><br><br>
+            
+            <!--Langue-->
+            <label for="langues" class="titre">Langues Parlées (plusieurs choix possibles) :</label><br>
+            <input type="checkbox" name="1" checked />Francais
+            <input type="checkbox" name="2" />Espagnol
+            <input type="checkbox" name="3" />Allemand
+            <input type="checkbox" name="4" />Italien
+            <input type="checkbox" name="5" />Anglais
+            <br>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Valider">
+        <input type="reset">
+
+    </form>
+
+</body>
+
+</html>
